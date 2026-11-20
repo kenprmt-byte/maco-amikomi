@@ -68,6 +68,12 @@ p+p{margin-top:12px}
 .voice{background:var(--beige);border-radius:16px;padding:16px 16px 14px;margin-top:12px;font-size:14px;position:relative}
 .voice:before{content:"“";position:absolute;top:-6px;left:12px;font-size:40px;color:var(--pink);line-height:1}
 .voice span{display:block;margin-top:6px;font-size:12px;color:var(--sub);text-align:right}
+.slider{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:12px -20px 0;padding:0 20px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.slider::-webkit-scrollbar{display:none}
+.slider img{flex:0 0 78%;width:78%;border-radius:16px;scroll-snap-align:center;box-shadow:0 6px 18px rgba(120,80,70,.12);background:#eee}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.dots span{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--pink)}
 .dm{margin:14px 0 0}
 .dm img{width:100%;display:block;border-radius:16px;box-shadow:0 6px 18px rgba(120,80,70,.12)}
 .dm figcaption{font-size:12px;color:var(--sub);text-align:center;margin-top:6px}
@@ -158,7 +164,15 @@ footer a{color:var(--sub)}
   <section class="fade">
     <span class="label">VOICE</span>
     <h2>「私には無理」と思ってたママたちから、届いたDM</h2>
-    <p>講座や動画を見てくれた方から、実際に届いたメッセージです。</p>
+    <p>まずは、受講生さんの「ビフォー→アフター」。<br>横にスワイプして見てね👉</p>
+    <div class="slider" id="slider">
+      <img src="media/voice1.jpg" alt="受講生さんのビフォーアフターと感想（編み込みだけは全然できなくて…）" loading="lazy">
+      <img src="media/voice2.jpg" alt="受講生さんのビフォーアフターと感想（三つ編みが正しくできるように）" loading="lazy">
+      <img src="media/voice3.jpg" alt="前回受講してくれたフォロワーさんの変化（大の苦手だった編み込み）" loading="lazy">
+      <img src="media/voice4.jpg" alt="前回受講してくれたフォロワーさんの変化（いつも同じアレンジばかりだったママ）" loading="lazy">
+    </div>
+    <p class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></p>
+    <p style="margin-top:14px">講座や動画を見てくれた方から、実際に届いたメッセージです。</p>
     <figure class="dm"><img src="media/dm-0729.jpg" alt="受講生さんから届いたDM（ほんとにできました・前は編み込みなんて無理って思ってたんですが…）" loading="lazy"></figure>
     <figure class="dm"><img src="media/dm-0822.jpg" alt="受講生さんから届いたDM（講座購入させていただきました・結果大満足です）" loading="lazy"><figcaption>「口コミとして使ってください」と言ってもらえたDMです</figcaption></figure>
     <p class="note" style="margin-top:10px;text-align:right">※個人の感想です</p>
@@ -213,6 +227,9 @@ footer a{color:var(--sub)}
   document.querySelectorAll('#chips .chip').forEach(function(c){
     c.addEventListener('click',function(){ c.classList.toggle('on'); if(document.querySelector('#chips .chip.on')) ans1.classList.add('open'); });
   });
+
+  var sl=document.getElementById('slider'), dots=document.querySelectorAll('#dots span');
+  sl.addEventListener('scroll',function(){ var w=sl.firstElementChild.getBoundingClientRect().width+10; var k=Math.round(sl.scrollLeft/w); dots.forEach(function(d,i){ d.classList.toggle('on',i===k); }); },{passive:true});
 
   var checks=document.querySelectorAll('#points .check'), count=document.getElementById('count'), ans2=document.getElementById('ans2');
   checks.forEach(function(b){ b.addEventListener('click',function(){
