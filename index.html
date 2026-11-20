@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>編み込みの基本｜macoからのプレゼント</title>
+<meta name="description" content="不器用でも大丈夫。編み込みの基本がわかるゆっくり解説動画。">
+<meta property="og:title" content="編み込みの基本｜macoからのプレゼント">
+<meta property="og:description" content="不器用でも大丈夫。編み込みの基本がわかるゆっくり解説動画。">
+<meta property="og:image" content="media/after.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf6f2; --card:#ffffff; --ink:#4a3b37; --sub:#8a7671;
+  --pink:#e8a0a8; --pink-d:#d77d88; --pink-l:#f8e3e5; --beige:#f1e6dc; --line:#eadbd2;
+  --green:#06c755;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:500;line-height:1.85;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px 60px}
+#bar{position:fixed;top:0;left:0;height:5px;width:0;background:linear-gradient(90deg,var(--pink),var(--pink-d));z-index:10;border-radius:0 3px 3px 0;transition:width .1s}
+.steps{position:sticky;top:5px;z-index:9;display:flex;justify-content:center;gap:6px;padding:10px 0;background:rgba(251,246,242,.94);backdrop-filter:blur(4px)}
+.steps span{font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--beige);color:var(--sub);transition:.3s}
+.steps span.on{background:var(--pink);color:#fff}
+.hero{text-align:center;padding:26px 0 8px}
+.thanks{display:inline-block;font-size:14px;font-weight:700;color:var(--pink-d);background:var(--pink-l);padding:6px 16px;border-radius:99px}
+h1{font-size:30px;font-weight:900;line-height:1.45;margin:18px 0 8px;letter-spacing:.02em}
+h1 em{font-style:normal;background:linear-gradient(transparent 60%,var(--pink-l) 60%)}
+.lead{color:var(--sub);font-size:15px}
+.ba{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 0 6px}
+.ba figure{width:42%;position:relative}
+.ba img{width:100%;border-radius:16px;display:block;box-shadow:0 6px 18px rgba(120,80,70,.12)}
+.ba figcaption{font-size:12px;color:var(--sub);margin-top:6px}
+.arrow{font-size:22px;color:var(--pink)}
+.note{font-size:12px;color:var(--sub);text-align:center}
+section{background:var(--card);border-radius:22px;padding:26px 20px;margin:22px 0;box-shadow:0 4px 16px rgba(120,80,70,.06)}
+.label{display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--pink);padding:3px 12px;border-radius:99px;letter-spacing:.08em}
+h2{font-size:22px;font-weight:900;line-height:1.5;margin:10px 0 14px}
+p+p{margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{border:2px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:700;padding:9px 14px;border-radius:14px;cursor:pointer;transition:.2s}
+.chip.on{border-color:var(--pink);background:var(--pink-l);color:var(--pink-d)}
+.reveal{max-height:0;overflow:hidden;opacity:0;transition:max-height .7s ease,opacity .5s}
+.reveal.open{max-height:2400px;opacity:1}
+.answer{margin-top:16px;padding:16px;border-radius:16px;background:var(--beige)}
+.answer strong{color:var(--pink-d)}
+.video{margin:16px 0 6px;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.video video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.vcap{font-size:12px;color:var(--sub);text-align:center}
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.six div{text-align:center;background:var(--pink-l);border-radius:12px;padding:10px 4px;font-size:13px;font-weight:700;color:var(--pink-d)}
+.six div b{display:block;font-size:11px;color:var(--sub);font-weight:700}
+.six div.hl{background:var(--pink);color:#fff}
+.six div.hl b{color:#fff}
+.points{list-style:none;margin:14px 0}
+.points li{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+.points li:last-child{border-bottom:0}
+.check{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid var(--pink);background:#fff;cursor:pointer;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900;transition:.2s}
+.check.on{background:var(--pink)}
+.points b{display:block;font-size:15px}
+.points small{color:var(--sub);font-size:13px;line-height:1.7;display:block}
+.count{text-align:center;font-weight:700;color:var(--pink-d);margin-top:6px}
+.voice{background:var(--beige);border-radius:16px;padding:16px 16px 14px;margin-top:12px;font-size:14px;position:relative}
+.voice:before{content:"“";position:absolute;top:-6px;left:12px;font-size:40px;color:var(--pink);line-height:1}
+.voice span{display:block;margin-top:6px;font-size:12px;color:var(--sub);text-align:right}
+.next{background:linear-gradient(160deg,#fff 0%,var(--pink-l) 100%)}
+.cd{display:flex;justify-content:center;align-items:baseline;gap:6px;margin:16px 0 6px;font-weight:900;color:var(--pink-d)}
+.cd b{font-size:46px;line-height:1}
+.cd small{font-size:14px;color:var(--ink)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:16px;padding:16px;border-radius:99px;margin-top:16px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.btn.line{background:var(--green);color:#fff}
+.btn.sub{background:#fff;color:var(--pink-d);border:2px solid var(--pink)}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+footer{text-align:center;font-size:12px;color:var(--sub);margin-top:30px}
+footer a{color:var(--sub)}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="wrap">
+  <nav class="steps" aria-label="すすみぐあい"><span data-s="1">STEP1 理由</span><span data-s="2">STEP2 動画</span><span data-s="3">STEP3 次へ</span></nav>
+
+  <header class="hero">
+    <span class="thanks">受け取ってくれてありがとう🎁</span>
+    <h1>編み込み、<br><em>不器用でも大丈夫。</em></h1>
+    <p class="lead">macoです🌷<br>私も最初は、ぜんぜんできひんかった。</p>
+    <div class="ba">
+      <figure><img src="media/before.jpg" alt="最初のころの編み込み" width="310" height="310"><figcaption>最初のころ</figcaption></figure>
+      <div class="arrow">▶</div>
+      <figure><img src="media/after.jpg" alt="今の編み込み" width="310" height="310"><figcaption>今</figcaption></figure>
+    </div>
+    <p class="note">動画の前に、1分だけ読んでな👇<br>上から順番に見ると、いちばん分かりやすいです</p>
+  </header>
+
+  <section id="s1" class="fade" data-step="1">
+    <span class="label">STEP 1</span>
+    <h2>あてはまるのは、どれ？</h2>
+    <p>タップしてみてな（いくつでもOK）</p>
+    <div class="chips" id="chips">
+      <button class="chip" type="button">動画どおりにならない</button>
+      <button class="chip" type="button">すぐ崩れる</button>
+      <button class="chip" type="button">指がこんがらがる</button>
+      <button class="chip" type="button">痛がって嫌がられる</button>
+      <button class="chip" type="button">いつも同じ髪型</button>
+    </div>
+    <div class="reveal" id="ans1">
+      <div class="answer">
+        <p>それ、<strong>不器用だからやないよ。</strong></p>
+        <p>土台になる基本を知らないまま、完成した可愛い髪型だけを真似しようとしてるから。<br>必要なのは器用さじゃなくて、<strong>順番どおりに知ること</strong>なんよ。</p>
+      </div>
+      <div class="video"><video src="media/riyuu.mp4" poster="media/riyuu-poster.jpg" controls playsinline preload="none"></video></div>
+      <p class="vcap">▶ アレンジが上手くいかない理由（1分42秒）</p>
+      <p style="margin-top:16px">その基本になるのが、この<strong style="color:var(--pink-d)">6つのテク</strong>。</p>
+      <div class="six">
+        <div><b>1</b>結ぶ</div><div><b>2</b>ねじる</div><div><b>3</b>くるりんぱ</div>
+        <div><b>4</b>三つ編み</div><div><b>5</b>引き出し方</div><div class="hl"><b>6</b>編み込み</div>
+      </div>
+      <p>今日のプレゼントは、この<strong>6つめ「編み込み」</strong>の基本です。</p>
+    </div>
+  </section>
+
+  <section id="s2" class="fade" data-step="2">
+    <span class="label">STEP 2</span>
+    <h2>編み込みの基本<br>ゆっくり解説動画🎁</h2>
+    <p>見る前に、ポイントは3つだけ。<br>できたら○をタップしてな。</p>
+    <ul class="points" id="points">
+      <li><button class="check" type="button" aria-label="できた">✓</button><div><b>① 三つ編みに、髪を足していくだけ</b><small>まず三つに分けて、1回三つ編み。そこから毛束を真ん中に持ってくるときに、少しずつ髪を足します。</small></div></li>
+      <li><button class="check" type="button" aria-label="できた">✓</button><div><b>② 足す髪は「少なめ」に</b><small>一度にたくさん取ると、手が混乱しやすくなります。ゆっくりでOK。</small></div></li>
+      <li><button class="check" type="button" aria-label="できた">✓</button><div><b>③ 持つ毛束をしっかり固定</b><small>次に編む毛束は薬指と小指で軽く固定。親指と人差し指で、重なったところを押さえます。</small></div></li>
+    </ul>
+    <div class="video"><video src="media/amikomi-kiso.mp4" poster="media/amikomi-poster.jpg" controls playsinline preload="none"></video></div>
+    <p class="vcap">▶ 4日目 編み込みマスター講座「編み込みの基礎」（4分47秒）<br>止めながら、巻き戻しながら、いっしょにやってみてな</p>
+    <p class="count" id="count">できた：0 / 3</p>
+    <div class="reveal" id="ans2">
+      <div class="answer">
+        <p>3つできた人、すごい🥹✨</p>
+        <p>うまくいかんかった人も大丈夫。<br>編み込みは、<strong>手の動きに慣れるのがいちばん大事</strong>。何回か繰り返したら、ちゃんと手が動くようになるよ。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <span class="label">VOICE</span>
+    <h2>「私には無理」と思ってたママたちも</h2>
+    <div class="voice">インスタでいろんなアレンジ動画見てきたけど、編み込みだけは全然できなくて、もう諦めてました。でも、macoさんの講座を受けてから、まさかの編み込みができるようになったんです。<span>受講生さんからの声</span></div>
+    <div class="voice">大の苦手だった編み込み…。元々不器用でいつも決まったヘアアレンジしかできず。リールではわかりにくかった部分も丁寧な解説動画で分かりやすくて、あっという間に上達しました！<span>受講生さんからの声</span></div>
+    <div class="voice">裏編み込み、今までチャレンジしようと思ったけど、指が絡まってどうしていいか分からなかったんです。でもこの動画なら好きなところで止めて、何度も見返せるので初めてできました。<span>受講生さんからの声</span></div>
+  </section>
+
+  <section id="s3" class="fade next" data-step="3">
+    <span class="label">STEP 3</span>
+    <h2>この動画は、講座の<br>「4日目」の1本です</h2>
+    <p>キッズヘアアレンジマスター講座では、さっきの<strong>6つのテクを、結ぶところから順番に</strong>学べます。</p>
+    <p>今日の編み込みも、結ぶ・ねじる・くるりんぱ・三つ編みを先に知ってると、ぐっとラクになるんよ。</p>
+    <div class="six">
+      <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
+      <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
+    </div>
+    <p>次の募集は、<strong>LINEに登録してくれてる人だけに、先にお知らせ</strong>します。</p>
+    <div class="cd" id="cd"><small>先行案内 12/3（木）まで あと</small><b id="days">-</b><small>日</small></div>
+    <a class="btn line" href="https://line.me/R/ti/p/@591mhsjo">LINEで感想・質問を送る</a>
+    <a class="btn sub" href="#s2">もう一回、動画を見る</a>
+  </section>
+
+  <footer>
+    macoからのプレゼント🌷<br>
+    <a href="https://www.instagram.com/maco_kids_hair/">@maco_kids_hair</a><br>
+    ※動画・ページの転載はご遠慮ください
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  var steps=document.querySelectorAll('.steps span');
+  function onScroll(){
+    var h=document.documentElement; var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0? (h.scrollTop/max*100):0)+'%';
+    var cur=0;
+    document.querySelectorAll('[data-step]').forEach(function(s){ if(s.getBoundingClientRect().top < window.innerHeight*0.5) cur=+s.dataset.step; });
+    steps.forEach(function(sp){ sp.classList.toggle('on', +sp.dataset.s<=cur && cur>0); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+
+  var ans1=document.getElementById('ans1');
+  document.querySelectorAll('#chips .chip').forEach(function(c){
+    c.addEventListener('click',function(){ c.classList.toggle('on'); if(document.querySelector('#chips .chip.on')) ans1.classList.add('open'); });
+  });
+  // チップを押さずにスクロールした人にも、少し遅れて答えを開く
+  var s1=document.getElementById('s1');
+  var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ setTimeout(function(){ ans1.classList.add('open'); },6000); io2.disconnect(); } }); },{threshold:.6});
+  io2.observe(s1);
+
+  var checks=document.querySelectorAll('#points .check'), count=document.getElementById('count'), ans2=document.getElementById('ans2');
+  checks.forEach(function(b){ b.addEventListener('click',function(){
+    b.classList.toggle('on');
+    var n=document.querySelectorAll('#points .check.on').length;
+    count.textContent='できた：'+n+' / 3';
+    if(n===3) ans2.classList.add('open');
+  }); });
+
+  var target=new Date('2026-12-03T00:00:00+09:00');
+  var d=Math.ceil((target-new Date())/86400000);
+  var cd=document.getElementById('cd');
+  if(d>0){ document.getElementById('days').textContent=d; } else { cd.innerHTML='<small>先行案内はLINEで届いてるよ。LINEをチェックしてな</small>'; }
+})();
+</script>
+</body>
+</html>
