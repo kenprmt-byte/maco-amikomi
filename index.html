@@ -26,6 +26,12 @@ body{background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragi
 .steps{position:sticky;top:5px;z-index:9;display:flex;justify-content:center;gap:6px;padding:10px 0;background:rgba(251,246,242,.94);backdrop-filter:blur(4px)}
 .steps span{font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--beige);color:var(--sub);transition:.3s}
 .steps span.on{background:var(--pink);color:#fff}
+.steps a{text-decoration:none}
+.newchip{font-size:12px;font-weight:900;padding:4px 12px;border-radius:99px;background:#fff;color:var(--pink-d);border:2px solid var(--pink);animation:pulse 1.6s ease-in-out infinite}
+.newchip[hidden]{display:none}
+@keyframes pulse{50%{background:var(--pink-l)}}
+.gate{scroll-margin-top:70px}
+.tag-new{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--pink-d);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle}
 .hero{text-align:center;padding:26px 0 8px}
 .thanks{display:inline-block;font-size:14px;font-weight:700;color:var(--pink-d);background:var(--pink-l);padding:6px 16px;border-radius:99px}
 h1{font-size:30px;font-weight:900;line-height:1.45;margin:18px 0 8px;letter-spacing:.02em}
@@ -113,7 +119,7 @@ footer a{color:var(--sub)}
 <body>
 <div id="bar"></div>
 <div class="wrap">
-  <nav class="steps" aria-label="すすみぐあい"><span data-s="1">STEP1 理由</span><span data-s="2">STEP2 動画</span><span data-s="3">STEP3 講座</span></nav>
+  <nav class="steps" aria-label="すすみぐあい"><a href="#s1"><span data-s="1">STEP1</span></a><a href="#s2"><span data-s="2">STEP2</span></a><a href="#s3"><span data-s="3">STEP3</span></a><a id="newchip" class="newchip" href="#s3" hidden></a></nav>
 
   <header class="hero">
     <span class="thanks">受け取ってくれてありがとう🎁</span>
@@ -180,15 +186,15 @@ footer a{color:var(--sub)}
     <h2>「私には無理」と思ってたママたちから、届いたDM</h2>
     <p>まずは、受講生さんの「ビフォー→アフター」。<br>横にスワイプして見てね👉</p>
     <div class="slider" id="slider">
-      <img src="media/voice1.jpg" alt="受講生さんのビフォーアフターと感想（編み込みだけは全然できなくて…）" loading="lazy">
-      <img src="media/voice2.jpg" alt="受講生さんのビフォーアフターと感想（三つ編みが正しくできるように）" loading="lazy">
-      <img src="media/voice3.jpg" alt="前回受講してくれたフォロワーさんの変化（大の苦手だった編み込み）" loading="lazy">
-      <img src="media/voice4.jpg" alt="前回受講してくれたフォロワーさんの変化（いつも同じアレンジばかりだったママ）" loading="lazy">
+      <img src="media/voice1.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（編み込みだけは全然できなくて…）" loading="lazy">
+      <img src="media/voice2.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（三つ編みが正しくできるように）" loading="lazy">
+      <img src="media/voice3.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（大の苦手だった編み込み）" loading="lazy">
+      <img src="media/voice4.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（いつも同じアレンジばかりだったママ）" loading="lazy">
     </div>
     <p class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></p>
     <p style="margin-top:14px">講座や動画を見てくれた方から、実際に届いたメッセージです。</p>
-    <figure class="dm"><img src="media/dm-0729.jpg" alt="受講生さんから届いたDM（ほんとにできました・前は編み込みなんて無理って思ってたんですが…）" loading="lazy"></figure>
-    <figure class="dm"><img src="media/dm-0822.jpg" alt="受講生さんから届いたDM（講座購入させていただきました・結果大満足です）" loading="lazy"><figcaption>「口コミとして使ってください」と言ってもらえたDMです</figcaption></figure>
+    <figure class="dm"><img src="media/dm-0729.jpg" width="720" height="600" alt="受講生さんから届いたDM（ほんとにできました・前は編み込みなんて無理って思ってたんですが…）" loading="lazy"></figure>
+    <figure class="dm"><img src="media/dm-0822.jpg" width="720" height="1280" alt="受講生さんから届いたDM（講座購入させていただきました・結果大満足です）" loading="lazy"><figcaption>「口コミとして使ってください」と言ってもらえたDMです</figcaption></figure>
     <p class="note" style="margin-top:10px;text-align:right">※個人の感想です</p>
   </section>
 
@@ -201,7 +207,7 @@ footer a{color:var(--sub)}
       <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
       <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
     </div>
-    <div class="gate" data-open="2026-11-29">
+    <div class="gate" id="g1129" data-open="2026-11-29" data-label="11/29 講座のおはなし">
       <div class="lock"><span>🔒</span><b>11/29（日）に公開</b><small>macoから、講座のおはなし動画（1分）</small></div>
       <div class="body">
     <h3 class="bonus-h">macoから、講座のおはなし</h3>
@@ -209,25 +215,25 @@ footer a{color:var(--sub)}
     <p class="vcap">▶ 講座のおはなし（1分12秒）<br>くわしい内容は、12/3にLINEで先にお届けします</p>
       </div>
     </div>
-    <div class="gate" data-open="2026-12-01">
+    <div class="gate" id="g1201" data-open="2026-12-01" data-label="12/1 特典10個">
       <div class="lock"><span>🔒</span><b>12/1（火）に公開</b><small>今回の特典（ぜんぶで10個）</small></div>
       <div class="body">
     <h3 class="bonus-h">今回の特典は、全部で10個</h3>
     <ul class="bonus">
-      <li><b>100種類のヘアアレンジを、ゆっくり解説した動画集</b><img src="media/bonus-kyokasho.jpg" alt="美容師監修 ヘアアレンジの教科書 100種類" loading="lazy"><small>「ヘアアレンジの教科書」（美容師監修）。全部の手順を、ゆっくり見ながらマネできます。</small><video class="scroll" src="media/kyokasho-scroll.mp4" poster="media/kyokasho-scroll.jpg" autoplay muted loop playsinline preload="metadata"></video><small class="cap">▲ 実際の一覧画面。「登園ヘア」「イベントヘア」など場面ごとに分かれていて、所要時間と難しさも書いてあります</small></li>
+      <li><b>100種類のヘアアレンジを、ゆっくり解説した動画集</b><img src="media/bonus-kyokasho.jpg" width="640" height="404" alt="美容師監修 ヘアアレンジの教科書 100種類" loading="lazy"><small>「ヘアアレンジの教科書」（美容師監修）。全部の手順を、ゆっくり見ながらマネできます。</small><video class="scroll" width="640" height="334" src="media/kyokasho-scroll.mp4" poster="media/kyokasho-scroll.jpg" autoplay muted loop playsinline preload="metadata"></video><small class="cap">▲ 実際の一覧画面。「登園ヘア」「イベントヘア」など場面ごとに分かれていて、所要時間と難しさも書いてあります</small></li>
       <li><b>視聴期限なし</b><small>忙しい時期があっても大丈夫。好きなときに、いつでも見られます。</small></li>
-      <li><b>ほかにも8つ</b><img src="media/bonus-set.jpg" alt="セレモニーヘア完全ガイド・おすすめのヘアスタイリング剤・1週間分の登園ヘアBOOK" loading="lazy"><small>コンテンツの無料アップデート／maco愛用スタイリング剤ベスト3／1週間分の登園ヘアブック／コテなしで作るふんわりパーマ／セレモニーヘア完全ガイド／プロも使う崩れないキープ術／ヘアのお悩み解決集／プチプラで作るエクステアレンジ</small></li>
+      <li><b>ほかにも8つ</b><img src="media/bonus-set.jpg" width="604" height="340" alt="セレモニーヘア完全ガイド・おすすめのヘアスタイリング剤・1週間分の登園ヘアBOOK" loading="lazy"><small>コンテンツの無料アップデート／maco愛用スタイリング剤ベスト3／1週間分の登園ヘアブック／コテなしで作るふんわりパーマ／セレモニーヘア完全ガイド／プロも使う崩れないキープ術／ヘアのお悩み解決集／プチプラで作るエクステアレンジ</small></li>
     </ul>
       </div>
     </div>
-    <div class="gate" data-open="2026-12-02">
+    <div class="gate" id="g1202" data-open="2026-12-02" data-label="12/2 よくある質問">
       <div class="lock"><span>🔒</span><b>12/2（水）に公開</b><small>よくある質問</small></div>
       <div class="body">
     <h3 class="bonus-h">よくある質問</h3>
     <div class="faq">
       <details><summary>不器用でも、本当にできるようになりますか？</summary><p>基礎の基礎から、手の動きをアップで、ゆっくり解説しています。よくある失敗と、そのときの直し方も入っています。このページの「編み込みの基本」の動画と同じように、止めながら何回でも見られます。</p></details>
       <details><summary>どんな形で受けるんですか？</summary><p>収録済みのオンライン動画です。手元をアップで撮っているので、スマホでも見やすいです。24時間いつでも、スキマ時間に見られます。</p></details>
-      <details><summary>編み込みは、どこまで学べますか？</summary><p>基礎のほかに、裏編み込み・片編み込み、髪の量に合わせた調整、子どもが痛がりにくい編み方、崩れにくくするコツまで入っています。</p></details>
+      <details open><summary>編み込みは、どこまで学べますか？</summary><p>基礎のほかに、裏編み込み・片編み込み、髪の量に合わせた調整、子どもが痛がりにくい編み方、崩れにくくするコツまで入っています。</p><div class="video"><video src="media/katamikomi.mp4" poster="media/katamikomi-poster.jpg" controls playsinline preload="none"></video></div><p class="vcap">▶ 講座の「片編み込み」から、少しだけ（27秒）</p></details>
       <details><summary>忙しくて、すぐに見られないかも…</summary><p>今回は視聴期限なしなので、時間ができたときに、自分のペースで見られます。</p></details>
     </div>
       </div>
@@ -277,9 +283,8 @@ footer a{color:var(--sub)}
     if(n>=1) ans2.classList.add('open');
   }); });
 
-  // 日付で中身を開ける（日本時間0時）。確認用に ?d=2026-12-01 で日付を指定できる
-  var now=new Date(), q=location.search.match(/[?&]d=(\d{4}-\d{2}-\d{2})/);
-  if(q) now=new Date(q[1]+'T12:00:00+09:00');
+  // 日付で中身を開ける（日本時間0時）
+  var now=new Date();
   var nextGate=null;
   document.querySelectorAll('.gate').forEach(function(g){
     var t=new Date(g.dataset.open+'T00:00:00+09:00');
@@ -287,6 +292,13 @@ footer a{color:var(--sub)}
   });
   var cd=document.getElementById('cd');
   var start=new Date('2026-12-03T00:00:00+09:00'), end=new Date('2026-12-04T00:00:00+09:00');
+  var opened=[].filter.call(document.querySelectorAll('.gate'),function(g){return g.classList.contains('open');});
+  var chip=document.getElementById('newchip');
+  if(opened.length && now<start){
+    var last=opened[opened.length-1];
+    chip.textContent='NEW '+last.dataset.label; chip.href='#'+last.id; chip.hidden=false;
+    var h=last.querySelector('.body .bonus-h'); if(h) h.insertAdjacentHTML('beforeend','<span class="tag-new">NEW</span>');
+  }
   if(nextGate){ cd.innerHTML='<small class="big">次は '+nextGate.querySelector('.lock b').textContent+'</small>'; }
   else if(now<start){ cd.innerHTML='<small class="big">12/3（木）に、LINEで先行案内が届きます</small>'; }
   else if(now<end){ cd.innerHTML='<small class="big">今日（12/3）、LINEで先行案内が届くよ。LINEをチェックしてね</small>'; }
