@@ -37,7 +37,7 @@ h1 em{font-style:normal;background:linear-gradient(transparent 60%,var(--pink-l)
 .ba figcaption{font-size:12px;color:var(--sub);margin-top:6px}
 .arrow{font-size:22px;color:var(--pink)}
 .note{font-size:12px;color:var(--sub);text-align:center}
-section{background:var(--card);border-radius:22px;padding:26px 20px;margin:22px 0;box-shadow:0 4px 16px rgba(120,80,70,.06)}
+section{scroll-margin-top:60px;background:var(--card);border-radius:22px;padding:26px 20px;margin:22px 0;box-shadow:0 4px 16px rgba(120,80,70,.06)}
 .label{display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--pink);padding:3px 12px;border-radius:99px;letter-spacing:.08em}
 h2{font-size:22px;font-weight:900;line-height:1.5;margin:10px 0 14px}
 p+p{margin-top:12px}
@@ -83,7 +83,7 @@ footer a{color:var(--sub)}
 <body>
 <div id="bar"></div>
 <div class="wrap">
-  <nav class="steps" aria-label="すすみぐあい"><span data-s="1">STEP1 理由</span><span data-s="2">STEP2 動画</span><span data-s="3">STEP3 次へ</span></nav>
+  <nav class="steps" aria-label="すすみぐあい"><span data-s="1">STEP1 理由</span><span data-s="2">STEP2 動画</span><span data-s="3">STEP3 講座</span></nav>
 
   <header class="hero">
     <span class="thanks">受け取ってくれてありがとう🎁</span>
@@ -94,23 +94,24 @@ footer a{color:var(--sub)}
       <div class="arrow">▶</div>
       <figure><img src="media/after.jpg" alt="今の編み込み" width="310" height="310"><figcaption>今</figcaption></figure>
     </div>
-    <p class="note">動画の前に、1分だけ読んでな👇<br>上から順番に見ると、いちばん分かりやすいです</p>
+    <p class="note">動画の前に、1分だけ読んでな👇<br>上から順番に見ると、いちばん分かりやすいで</p>
   </header>
 
   <section id="s1" class="fade" data-step="1">
     <span class="label">STEP 1</span>
     <h2>あてはまるのは、どれ？</h2>
-    <p>タップしてみてな（いくつでもOK）</p>
+    <p>タップすると答えが出るよ👇（いくつでもOK）</p>
     <div class="chips" id="chips">
       <button class="chip" type="button">動画どおりにならない</button>
       <button class="chip" type="button">すぐ崩れる</button>
       <button class="chip" type="button">指がこんがらがる</button>
       <button class="chip" type="button">痛がって嫌がられる</button>
       <button class="chip" type="button">いつも同じ髪型</button>
+      <button class="chip" type="button">とりあえず答えを見る</button>
     </div>
     <div class="reveal" id="ans1">
       <div class="answer">
-        <p>それ、<strong>不器用だからやないよ。</strong></p>
+        <p>それ、<strong>不器用やからちゃうよ。</strong></p>
         <p>土台になる基本を知らないまま、完成した可愛い髪型だけを真似しようとしてるから。<br>必要なのは器用さじゃなくて、<strong>順番どおりに知ること</strong>なんよ。</p>
       </div>
       <div class="video"><video src="media/riyuu.mp4" poster="media/riyuu-poster.jpg" controls playsinline preload="none"></video></div>
@@ -120,26 +121,26 @@ footer a{color:var(--sub)}
         <div><b>1</b>結ぶ</div><div><b>2</b>ねじる</div><div><b>3</b>くるりんぱ</div>
         <div><b>4</b>三つ編み</div><div><b>5</b>引き出し方</div><div class="hl"><b>6</b>編み込み</div>
       </div>
-      <p>今日のプレゼントは、この<strong>6つめ「編み込み」</strong>の基本です。</p>
+      <p>今日のプレゼントは、この<strong>6つめ「編み込み」</strong>の基本やで。</p>
     </div>
   </section>
 
   <section id="s2" class="fade" data-step="2">
     <span class="label">STEP 2</span>
     <h2>編み込みの基本<br>ゆっくり解説動画🎁</h2>
-    <p>見る前に、ポイントは3つだけ。<br>できたら○をタップしてな。</p>
+    <p>ポイントは3つだけ。<br>動画を見ながら、できたら○をタップしてな。</p>
+    <div class="video"><video src="media/amikomi-kiso.mp4" poster="media/amikomi-poster.jpg" controls playsinline preload="none"></video></div>
+    <p class="vcap">▶ 4日目 編み込みマスター講座「編み込みの基礎」（4分47秒）<br>止めながら、巻き戻しながら、いっしょにやってみてな</p>
     <ul class="points" id="points">
       <li><button class="check" type="button" aria-label="できた">✓</button><div><b>① 三つ編みに、髪を足していくだけ</b><small>まず三つに分けて、1回三つ編み。そこから毛束を真ん中に持ってくるときに、少しずつ髪を足します。</small></div></li>
       <li><button class="check" type="button" aria-label="できた">✓</button><div><b>② 足す髪は「少なめ」に</b><small>一度にたくさん取ると、手が混乱しやすくなります。ゆっくりでOK。</small></div></li>
       <li><button class="check" type="button" aria-label="できた">✓</button><div><b>③ 持つ毛束をしっかり固定</b><small>次に編む毛束は薬指と小指で軽く固定。親指と人差し指で、重なったところを押さえます。</small></div></li>
     </ul>
-    <div class="video"><video src="media/amikomi-kiso.mp4" poster="media/amikomi-poster.jpg" controls playsinline preload="none"></video></div>
-    <p class="vcap">▶ 4日目 編み込みマスター講座「編み込みの基礎」（4分47秒）<br>止めながら、巻き戻しながら、いっしょにやってみてな</p>
     <p class="count" id="count">できた：0 / 3</p>
     <div class="reveal" id="ans2">
       <div class="answer">
-        <p>3つできた人、すごい🥹✨</p>
-        <p>うまくいかんかった人も大丈夫。<br>編み込みは、<strong>手の動きに慣れるのがいちばん大事</strong>。何回か繰り返したら、ちゃんと手が動くようになるよ。</p>
+        <p>できたところがあった人、すごい🥹✨</p>
+        <p>まだの人も大丈夫。<br>編み込みは、<strong>手の動きに慣れるのがいちばん大事</strong>。何回か繰り返したら、ちゃんと手が動くようになるよ。</p>
       </div>
     </div>
   </section>
@@ -149,19 +150,20 @@ footer a{color:var(--sub)}
     <h2>「私には無理」と思ってたママたちも</h2>
     <div class="voice">インスタでいろんなアレンジ動画見てきたけど、編み込みだけは全然できなくて、もう諦めてました。でも、macoさんの講座を受けてから、まさかの編み込みができるようになったんです。<span>受講生さんからの声</span></div>
     <div class="voice">大の苦手だった編み込み…。元々不器用でいつも決まったヘアアレンジしかできず。リールではわかりにくかった部分も丁寧な解説動画で分かりやすくて、あっという間に上達しました！<span>受講生さんからの声</span></div>
+    <p class="note" style="margin-top:10px;text-align:right">※個人の感想です</p>
     <div class="voice">裏編み込み、今までチャレンジしようと思ったけど、指が絡まってどうしていいか分からなかったんです。でもこの動画なら好きなところで止めて、何度も見返せるので初めてできました。<span>受講生さんからの声</span></div>
   </section>
 
   <section id="s3" class="fade next" data-step="3">
     <span class="label">STEP 3</span>
     <h2>この動画は、講座の<br>「4日目」の1本です</h2>
-    <p>キッズヘアアレンジマスター講座では、さっきの<strong>6つのテクを、結ぶところから順番に</strong>学べます。</p>
-    <p>今日の編み込みも、結ぶ・ねじる・くるりんぱ・三つ編みを先に知ってると、ぐっとラクになるんよ。</p>
+    <p>キッズヘアアレンジマスター講座では、さっきの<strong>6つのテクを、基礎から順番に</strong>学べるで。</p>
+    <p>編み込みも、実は三つ編みに髪を足していくだけ。<strong>三つ編みができてたら、ぐっとラクになる</strong>んよ。</p>
     <div class="six">
       <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
       <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
     </div>
-    <p>次の募集は、<strong>LINEに登録してくれてる人だけに、先にお知らせ</strong>します。</p>
+    <p>次の募集は、<strong>LINEに登録してくれてる人だけに、先にお知らせ</strong>するな。</p>
     <div class="cd" id="cd"><small>先行案内 12/3（木）まで あと</small><b id="days">-</b><small>日</small></div>
     <a class="btn line" href="https://line.me/R/ti/p/@591mhsjo">LINEで感想・質問を送る</a>
     <a class="btn sub" href="#s2">もう一回、動画を見る</a>
@@ -194,23 +196,20 @@ footer a{color:var(--sub)}
   document.querySelectorAll('#chips .chip').forEach(function(c){
     c.addEventListener('click',function(){ c.classList.toggle('on'); if(document.querySelector('#chips .chip.on')) ans1.classList.add('open'); });
   });
-  // チップを押さずにスクロールした人にも、少し遅れて答えを開く
-  var s1=document.getElementById('s1');
-  var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ setTimeout(function(){ ans1.classList.add('open'); },6000); io2.disconnect(); } }); },{threshold:.6});
-  io2.observe(s1);
 
   var checks=document.querySelectorAll('#points .check'), count=document.getElementById('count'), ans2=document.getElementById('ans2');
   checks.forEach(function(b){ b.addEventListener('click',function(){
     b.classList.toggle('on');
     var n=document.querySelectorAll('#points .check.on').length;
     count.textContent='できた：'+n+' / 3';
-    if(n===3) ans2.classList.add('open');
+    if(n>=1) ans2.classList.add('open');
   }); });
 
-  var target=new Date('2026-12-03T00:00:00+09:00');
-  var d=Math.ceil((target-new Date())/86400000);
-  var cd=document.getElementById('cd');
-  if(d>0){ document.getElementById('days').textContent=d; } else { cd.innerHTML='<small>先行案内はLINEで届いてるよ。LINEをチェックしてな</small>'; }
+  var now=new Date(), cd=document.getElementById('cd');
+  var start=new Date('2026-12-03T00:00:00+09:00'), end=new Date('2026-12-04T00:00:00+09:00');
+  if(now<start){ document.getElementById('days').textContent=Math.ceil((start-now)/86400000); }
+  else if(now<end){ cd.innerHTML='<small>今日（12/3）、LINEで先行案内が届くよ。LINEをチェックしてな</small>'; }
+  else { cd.innerHTML='<small>先行案内はLINEで届いてるよ。LINEをチェックしてな</small>'; }
 })();
 </script>
 </body>
