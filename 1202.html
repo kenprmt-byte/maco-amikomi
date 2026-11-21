@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>よくある質問｜macoから</title>
+<meta property="og:title" content="よくある質問｜macoから">
+<meta property="og:image" content="media/after.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf6f2; --card:#ffffff; --ink:#4a3b37; --sub:#8a7671;
+  --pink:#e8a0a8; --pink-d:#d77d88; --pink-l:#f8e3e5; --beige:#f1e6dc; --line:#eadbd2;
+  --green:#06c755;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:500;line-height:1.85;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px 60px}
+#bar{position:fixed;top:0;left:0;height:5px;width:0;background:linear-gradient(90deg,var(--pink),var(--pink-d));z-index:10;border-radius:0 3px 3px 0;transition:width .1s}
+.steps{position:sticky;top:5px;z-index:9;display:flex;justify-content:center;gap:6px;padding:10px 0;background:rgba(251,246,242,.94);backdrop-filter:blur(4px)}
+.steps span{font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--beige);color:var(--sub);transition:.3s}
+.steps span.on{background:var(--pink);color:#fff}
+.steps a{text-decoration:none}
+.newchip{font-size:12px;font-weight:900;padding:4px 12px;border-radius:99px;background:#fff;color:var(--pink-d);border:2px solid var(--pink);animation:pulse 1.6s ease-in-out infinite}
+.newchip[hidden]{display:none}
+@keyframes pulse{50%{background:var(--pink-l)}}
+.gate{scroll-margin-top:70px}
+.tag-new{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--pink-d);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.hero{text-align:center;padding:26px 0 8px}
+.thanks{display:inline-block;font-size:14px;font-weight:700;color:var(--pink-d);background:var(--pink-l);padding:6px 16px;border-radius:99px}
+h1{font-size:30px;font-weight:900;line-height:1.45;margin:18px 0 8px;letter-spacing:.02em}
+h1 em{font-style:normal;background:linear-gradient(transparent 60%,var(--pink-l) 60%)}
+.lead{color:var(--sub);font-size:15px}
+.ba{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 0 6px}
+.ba figure{width:42%;position:relative}
+.ba img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:16px;display:block;box-shadow:0 6px 18px rgba(120,80,70,.12)}
+.ba figcaption{font-size:12px;color:var(--sub);margin-top:6px}
+.arrow{font-size:22px;color:var(--pink)}
+.note{font-size:12px;color:var(--sub);text-align:center}
+section{scroll-margin-top:60px;background:var(--card);border-radius:22px;padding:26px 20px;margin:22px 0;box-shadow:0 4px 16px rgba(120,80,70,.06)}
+.label{display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--pink);padding:3px 12px;border-radius:99px;letter-spacing:.08em}
+h2{font-size:22px;font-weight:900;line-height:1.5;margin:10px 0 14px}
+p+p{margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{border:2px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:700;padding:9px 14px;border-radius:14px;cursor:pointer;transition:.2s}
+.chip.on{border-color:var(--pink);background:var(--pink-l);color:var(--pink-d)}
+.reveal{max-height:0;overflow:hidden;opacity:0;transition:max-height .7s ease,opacity .5s}
+.reveal.open{max-height:2400px;opacity:1}
+.answer{margin-top:16px;padding:16px;border-radius:16px;background:var(--beige)}
+.answer strong{color:var(--pink-d)}
+.video{margin:16px 0 6px;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.video video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.video.yt iframe{width:100%;display:block;aspect-ratio:16/9;border:0}
+.vcap{font-size:12px;color:var(--sub);text-align:center}
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.six div{text-align:center;background:var(--pink-l);border-radius:12px;padding:10px 4px;font-size:13px;font-weight:700;color:var(--pink-d)}
+.six div b{display:block;font-size:11px;color:var(--sub);font-weight:700}
+.six div.hl{background:var(--pink);color:#fff}
+.six div.hl b{color:#fff}
+.points{list-style:none;margin:14px 0}
+.points li{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+.points li:last-child{border-bottom:0}
+.check{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid var(--pink);background:#fff;cursor:pointer;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900;transition:.2s}
+.check.on{background:var(--pink)}
+.points b{display:block;font-size:15px}
+.points small{color:var(--sub);font-size:13px;line-height:1.7;display:block}
+.count{text-align:center;font-weight:700;color:var(--pink-d);margin-top:6px}
+.voice{background:var(--beige);border-radius:16px;padding:16px 16px 14px;margin-top:12px;font-size:14px;position:relative}
+.voice:before{content:"“";position:absolute;top:-6px;left:12px;font-size:40px;color:var(--pink);line-height:1}
+.voice span{display:block;margin-top:6px;font-size:12px;color:var(--sub);text-align:right}
+.slider{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:12px -20px 0;padding:0 20px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.slider::-webkit-scrollbar{display:none}
+.slider img{flex:0 0 78%;width:78%;height:auto;border-radius:16px;scroll-snap-align:center;box-shadow:0 6px 18px rgba(120,80,70,.12);background:#eee}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.dots span{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--pink)}
+.dm{margin:14px 0 0}
+.dm img{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 6px 18px rgba(120,80,70,.12)}
+.dm figcaption{font-size:12px;color:var(--sub);text-align:center;margin-top:6px}
+.bonus-h{font-size:18px;font-weight:900;margin:20px 0 8px;color:var(--pink-d)}
+.bonus{list-style:none}
+.bonus li{background:#fff;border:2px solid var(--pink-l);border-radius:16px;padding:12px 14px;margin-top:10px}
+.bonus li b{display:block;font-size:15px}
+.bonus li b:before{content:"🎁 "}
+.bonus li small{display:block;color:var(--sub);font-size:13px;line-height:1.7;margin-top:2px}
+.bonus li video.scroll{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0 4px;border:1px solid var(--pink-l);background:#fff}
+.bonus li small.cap{font-size:12px}
+.bonus li img{display:block;width:100%;height:auto;border-radius:10px;margin:8px 0 6px}
+.gate .body{display:none}
+.gate.open .body{display:block}
+.gate.open .lock{display:none}
+.note-free{margin-top:18px;padding:12px 14px;border-radius:14px;background:var(--pink-l);font-size:14px;line-height:1.8}
+.lock{margin-top:14px;padding:16px;border-radius:16px;border:2px dashed var(--pink);background:#fff;text-align:center}
+.lock span{display:block;font-size:22px}
+.lock b{display:block;font-size:16px;color:var(--pink-d)}
+.lock small{display:block;font-size:13px;color:var(--sub)}
+.faq details{background:#fff;border:2px solid var(--pink-l);border-radius:14px;margin-top:10px;padding:12px 14px}
+.faq summary{font-weight:700;font-size:15px;cursor:pointer}
+.faq details p{margin-top:8px;font-size:14px;color:var(--ink)}
+.cd small.big{font-size:15px;font-weight:900;color:var(--pink-d)}
+.next{background:linear-gradient(160deg,#fff 0%,var(--pink-l) 100%)}
+.cd{display:flex;justify-content:center;align-items:baseline;gap:6px;margin:16px 0 6px;font-weight:900;color:var(--pink-d)}
+.cd b{font-size:46px;line-height:1}
+.cd small{font-size:14px;color:var(--ink)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:16px;padding:16px;border-radius:99px;margin-top:16px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.btn.line{background:var(--green);color:#fff}
+.btn.sub{background:#fff;color:var(--pink-d);border:2px solid var(--pink)}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+footer{text-align:center;font-size:12px;color:var(--sub);margin-top:30px}
+footer a{color:var(--sub)}
+
+.day{display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--pink);padding:3px 12px;border-radius:99px;letter-spacing:.06em}
+.page h1{font-size:24px;line-height:1.5;margin:10px 0 12px}
+.page section{margin-top:22px;padding:22px 18px;border-radius:22px;background:#fff}
+.nextday{margin-top:22px;padding:16px;border-radius:16px;background:var(--pink-l);text-align:center;font-size:15px;line-height:1.8}
+.nextday b{color:var(--pink-d)}
+</style>
+</head>
+<body>
+<div class="wrap page">
+  <header style="padding-top:28px">
+    <span class="day">12/2（水）　macoから</span>
+    <h1>よく聞かれる質問に、答えます</h1>
+    <p>「不器用でもできる？」「忙しくて見られないかも」…<br>よく聞かれることに、まとめて答えるね☺️</p>
+  </header>
+  <section>
+    <div class="faq">
+      <details><summary>不器用でも、本当にできるようになりますか？</summary><p>基礎の基礎から、手の動きをアップで、ゆっくり解説しています。よくある失敗と、そのときの直し方も入っています。このページの「編み込みの基本」の動画と同じように、止めながら何回でも見られます。</p></details>
+      <details><summary>どんな形で受けるんですか？</summary><p>収録済みのオンライン動画です。手元をアップで撮っているので、スマホでも見やすいです。24時間いつでも、スキマ時間に見られます。</p></details>
+      <details open><summary>編み込みは、どこまで学べますか？</summary><p>基礎のほかに、裏編み込み・片編み込み、髪の量に合わせた調整、子どもが痛がりにくい編み方、崩れにくくするコツまで入っています。</p><div class="video"><video src="media/katamikomi.mp4" poster="media/katamikomi-poster.jpg" controls playsinline preload="none"></video></div><p class="vcap">▶ 講座の「片編み込み」から、少しだけ（27秒）</p></details>
+      <details><summary>忙しくて、すぐに見られないかも…</summary><p>今回は視聴期限なしなので、時間ができたときに、自分のペースで見られます。</p></details>
+    </div>
+  </section>
+  <div class="nextday">明日 <b>12/3（木）</b>、LINEに登録してくれている人へ、講座のことをひと足先にご案内します</div>
+  <a class="btn line" href="https://line.me/R/ti/p/@591mhsjo">LINEで感想・質問を送る</a>
+  <a class="btn sub" href="./#s2">編み込みの動画を、もう一回見る</a>
+  <footer>
+    macoから🌷<br>
+    <a href="https://www.instagram.com/maco_kids_hair/">@maco_kids_hair</a><br>
+    ※動画・ページの転載はご遠慮ください
+  </footer>
+</div>
+</body>
+</html>

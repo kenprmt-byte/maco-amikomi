@@ -95,6 +95,8 @@ p+p{margin-top:12px}
 .gate .body{display:none}
 .gate.open .body{display:block}
 .gate.open .lock{display:none}
+.bridge{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff;border:2px solid var(--pink-l);font-size:15px;line-height:1.9}
+.bridge p+p{margin-top:6px}
 .note-free{margin-top:18px;padding:12px 14px;border-radius:14px;background:var(--pink-l);font-size:14px;line-height:1.8}
 .lock{margin-top:14px;padding:16px;border-radius:16px;border:2px dashed var(--pink);background:#fff;text-align:center}
 .lock span{display:block;font-size:22px}
@@ -120,7 +122,7 @@ footer a{color:var(--sub)}
 <body>
 <div id="bar"></div>
 <div class="wrap">
-  <nav class="steps" aria-label="すすみぐあい"><a href="#s1"><span data-s="1">STEP1</span></a><a href="#s2"><span data-s="2">STEP2</span></a><a href="#s3"><span data-s="3">STEP3</span></a><a id="newchip" class="newchip" href="#s3" hidden></a></nav>
+  <nav class="steps" aria-label="すすみぐあい"><a href="#s1"><span data-s="1">STEP1</span></a><a href="#s2"><span data-s="2">STEP2</span></a><a href="#s3"><span data-s="3">STEP3</span></a></nav>
 
   <header class="hero">
     <span class="thanks">受け取ってくれてありがとう🎁</span>
@@ -207,37 +209,10 @@ footer a{color:var(--sub)}
       <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
       <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
     </div>
-    <p class="note-free">無料で見られる編み込み動画は、さっきの1本だけ。<br>ここから下は、<strong>講座のご案内</strong>です（日付ごとに開きます）</p>
-    <div class="gate" id="g1129" data-open="2026-11-29" data-label="11/29 講座のおはなし">
-      <div class="lock" data-what="講座のおはなし"><span>🔒</span><b>macoから、講座のおはなし（1分）</b><small>11/29（日）に公開</small></div>
-      <div class="body">
-    <h3 class="bonus-h">macoから、講座のおはなし</h3>
-    <div class="video"><video src="media/kouza.mp4" poster="media/kouza-poster.jpg" controls playsinline preload="none"></video></div>
-    <p class="vcap">▶ 講座のおはなし（1分12秒）<br>くわしい内容は、12/3にLINEで先にお届けします</p>
-      </div>
-    </div>
-    <div class="gate" id="g1201" data-open="2026-12-01" data-label="12/1 特典10個">
-      <div class="lock" data-what="今回の特典"><span>🔒</span><b>今回の特典（ぜんぶで10個）</b><small>12/1（火）に公開</small></div>
-      <div class="body">
-    <h3 class="bonus-h">今回の特典は、全部で10個</h3>
-    <ul class="bonus">
-      <li><b>100種類のヘアアレンジを、ゆっくり解説した動画集</b><img src="media/bonus-kyokasho.jpg" width="640" height="404" alt="美容師監修 ヘアアレンジの教科書 100種類" loading="lazy"><small>「ヘアアレンジの教科書」（美容師監修）。全部の手順を、ゆっくり見ながらマネできます。</small><video class="scroll" width="640" height="334" src="media/kyokasho-scroll.mp4" poster="media/kyokasho-scroll.jpg" autoplay muted loop playsinline preload="metadata"></video><small class="cap">▲ 実際の一覧画面。「登園ヘア」「イベントヘア」など場面ごとに分かれていて、所要時間と難しさも書いてあります</small></li>
-      <li><b>視聴期限なし</b><small>忙しい時期があっても大丈夫。好きなときに、いつでも見られます。</small></li>
-      <li><b>ほかにも8つ</b><img src="media/bonus-set.jpg" width="604" height="340" alt="セレモニーヘア完全ガイド・おすすめのヘアスタイリング剤・1週間分の登園ヘアBOOK" loading="lazy"><small>コンテンツの無料アップデート／maco愛用スタイリング剤ベスト3／1週間分の登園ヘアブック／コテなしで作るふんわりパーマ／セレモニーヘア完全ガイド／プロも使う崩れないキープ術／ヘアのお悩み解決集／プチプラで作るエクステアレンジ</small></li>
-    </ul>
-      </div>
-    </div>
-    <div class="gate" id="g1202" data-open="2026-12-02" data-label="12/2 よくある質問">
-      <div class="lock" data-what="よくある質問"><span>🔒</span><b>よくある質問</b><small>12/2（水）に公開</small></div>
-      <div class="body">
-    <h3 class="bonus-h">よくある質問</h3>
-    <div class="faq">
-      <details><summary>不器用でも、本当にできるようになりますか？</summary><p>基礎の基礎から、手の動きをアップで、ゆっくり解説しています。よくある失敗と、そのときの直し方も入っています。このページの「編み込みの基本」の動画と同じように、止めながら何回でも見られます。</p></details>
-      <details><summary>どんな形で受けるんですか？</summary><p>収録済みのオンライン動画です。手元をアップで撮っているので、スマホでも見やすいです。24時間いつでも、スキマ時間に見られます。</p></details>
-      <details open><summary>編み込みは、どこまで学べますか？</summary><p>基礎のほかに、裏編み込み・片編み込み、髪の量に合わせた調整、子どもが痛がりにくい編み方、崩れにくくするコツまで入っています。</p><div class="video"><video src="media/katamikomi.mp4" poster="media/katamikomi-poster.jpg" controls playsinline preload="none"></video></div><p class="vcap">▶ 講座の「片編み込み」から、少しだけ（27秒）</p></details>
-      <details><summary>忙しくて、すぐに見られないかも…</summary><p>今回は視聴期限なしなので、時間ができたときに、自分のペースで見られます。</p></details>
-    </div>
-      </div>
+    <div class="bridge">
+      <p>4日目の編み込み、やってみてどうだった？☺️</p>
+      <p>1日目から順番にやると、編み込みはもっとラクになるよ。</p>
+      <p>講座のこと、<strong>11/29（日）から、LINEで少しずつお話し</strong>させてね🌷</p>
     </div>
     <p style="margin-top:16px">次の募集は、<strong>LINEに登録してくれてる人だけに、先にお知らせ</strong>します。</p>
     <div class="cd" id="cd"><small>先行案内 12/3（木）</small></div>
@@ -284,24 +259,9 @@ footer a{color:var(--sub)}
     if(n>=1) ans2.classList.add('open');
   }); });
 
-  // 日付で中身を開ける（日本時間0時）
-  var now=new Date();
-  var nextGate=null;
-  document.querySelectorAll('.gate').forEach(function(g){
-    var t=new Date(g.dataset.open+'T00:00:00+09:00');
-    if(now>=t) g.classList.add('open'); else if(!nextGate) nextGate=g;
-  });
-  var cd=document.getElementById('cd');
+  var now=new Date(), cd=document.getElementById('cd');
   var start=new Date('2026-12-03T00:00:00+09:00'), end=new Date('2026-12-04T00:00:00+09:00');
-  var opened=[].filter.call(document.querySelectorAll('.gate'),function(g){return g.classList.contains('open');});
-  var chip=document.getElementById('newchip');
-  if(opened.length && now<start){
-    var last=opened[opened.length-1];
-    chip.textContent='NEW '+last.dataset.label; chip.href='#'+last.id; chip.hidden=false;
-    var h=last.querySelector('.body .bonus-h'); if(h) h.insertAdjacentHTML('beforeend','<span class="tag-new">NEW</span>');
-  }
-  if(nextGate){ cd.innerHTML='<small class="big">次は '+nextGate.querySelector('.lock small').textContent.replace('に公開','')+'：'+nextGate.querySelector('.lock').dataset.what+'</small>'; }
-  else if(now<start){ cd.innerHTML='<small class="big">12/3（木）に、LINEで先行案内が届きます</small>'; }
+  if(now<start){ cd.innerHTML='<small class="big">12/3（木）に、LINEで先行案内が届きます</small>'; }
   else if(now<end){ cd.innerHTML='<small class="big">今日（12/3）、LINEで先行案内が届くよ。LINEをチェックしてね</small>'; }
   else { cd.innerHTML='<small class="big">先行案内はLINEで届いてるよ。LINEをチェックしてね</small>'; }
 })();
