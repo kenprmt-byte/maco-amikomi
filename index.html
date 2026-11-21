@@ -95,6 +95,7 @@ p+p{margin-top:12px}
 .gate .body{display:none}
 .gate.open .body{display:block}
 .gate.open .lock{display:none}
+.note-free{margin-top:18px;padding:12px 14px;border-radius:14px;background:var(--pink-l);font-size:14px;line-height:1.8}
 .lock{margin-top:14px;padding:16px;border-radius:16px;border:2px dashed var(--pink);background:#fff;text-align:center}
 .lock span{display:block;font-size:22px}
 .lock b{display:block;font-size:16px;color:var(--pink-d)}
@@ -206,8 +207,9 @@ footer a{color:var(--sub)}
       <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
       <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
     </div>
+    <p class="note-free">無料で見られる編み込み動画は、さっきの1本だけ。<br>ここから下は、<strong>講座のご案内</strong>です（日付ごとに開きます）</p>
     <div class="gate" id="g1129" data-open="2026-11-29" data-label="11/29 講座のおはなし">
-      <div class="lock"><span>🔒</span><b>11/29（日）に公開</b><small>macoから、講座のおはなし動画（1分）</small></div>
+      <div class="lock" data-what="講座のおはなし"><span>🔒</span><b>macoから、講座のおはなし（1分）</b><small>11/29（日）に公開</small></div>
       <div class="body">
     <h3 class="bonus-h">macoから、講座のおはなし</h3>
     <div class="video"><video src="media/kouza.mp4" poster="media/kouza-poster.jpg" controls playsinline preload="none"></video></div>
@@ -215,7 +217,7 @@ footer a{color:var(--sub)}
       </div>
     </div>
     <div class="gate" id="g1201" data-open="2026-12-01" data-label="12/1 特典10個">
-      <div class="lock"><span>🔒</span><b>12/1（火）に公開</b><small>今回の特典（ぜんぶで10個）</small></div>
+      <div class="lock" data-what="今回の特典"><span>🔒</span><b>今回の特典（ぜんぶで10個）</b><small>12/1（火）に公開</small></div>
       <div class="body">
     <h3 class="bonus-h">今回の特典は、全部で10個</h3>
     <ul class="bonus">
@@ -226,7 +228,7 @@ footer a{color:var(--sub)}
       </div>
     </div>
     <div class="gate" id="g1202" data-open="2026-12-02" data-label="12/2 よくある質問">
-      <div class="lock"><span>🔒</span><b>12/2（水）に公開</b><small>よくある質問</small></div>
+      <div class="lock" data-what="よくある質問"><span>🔒</span><b>よくある質問</b><small>12/2（水）に公開</small></div>
       <div class="body">
     <h3 class="bonus-h">よくある質問</h3>
     <div class="faq">
@@ -298,7 +300,7 @@ footer a{color:var(--sub)}
     chip.textContent='NEW '+last.dataset.label; chip.href='#'+last.id; chip.hidden=false;
     var h=last.querySelector('.body .bonus-h'); if(h) h.insertAdjacentHTML('beforeend','<span class="tag-new">NEW</span>');
   }
-  if(nextGate){ cd.innerHTML='<small class="big">次は '+nextGate.querySelector('.lock b').textContent+'</small>'; }
+  if(nextGate){ cd.innerHTML='<small class="big">次は '+nextGate.querySelector('.lock small').textContent.replace('に公開','')+'：'+nextGate.querySelector('.lock').dataset.what+'</small>'; }
   else if(now<start){ cd.innerHTML='<small class="big">12/3（木）に、LINEで先行案内が届きます</small>'; }
   else if(now<end){ cd.innerHTML='<small class="big">今日（12/3）、LINEで先行案内が届くよ。LINEをチェックしてね</small>'; }
   else { cd.innerHTML='<small class="big">先行案内はLINEで届いてるよ。LINEをチェックしてね</small>'; }
