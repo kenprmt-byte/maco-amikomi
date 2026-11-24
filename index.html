@@ -144,8 +144,22 @@ footer a{color:var(--sub)}
       <div class="arrow">▶</div>
       <figure><img src="media/after.jpg" alt="今の編み込み" width="310" height="310"><figcaption>今</figcaption></figure>
     </div>
-    <p class="note">動画の前に、1分だけ読んでね👇<br>上から順番に見ると、いちばん分かりやすいです</p>
-  </header>
+    </header>
+
+  <section class="fade in" id="s0">
+    <p class="first">▶ まずは、この動画を見てみてね</p>
+    <div class="video"><video id="riyuu" src="media/riyuu.mp4" poster="media/riyuu-poster.jpg" controls playsinline preload="metadata"></video></div>
+    <p class="vcap">▶ アレンジが上手くいかない理由（1分42秒）</p>
+    <div class="vlock" id="vlock">
+      <span>🔒</span>
+      <b>動画を見終わると、続きが開くよ</b>
+      <small>編み込みのプレゼント動画は、<br>この続きにあります🎁</small>
+      <div class="meter"><i id="meter"></i></div>
+      <button type="button" id="skip">プレゼント動画を先に見たい人は、こちら</button>
+    </div>
+  </section>
+
+  <div id="after" hidden>
 
   <section id="s1" class="fade" data-step="1">
     <span class="label">STEP 1</span>
@@ -164,8 +178,6 @@ footer a{color:var(--sub)}
         <p>それ、<strong>不器用だからじゃないよ。</strong></p>
         <p>土台になる基本を知らないまま、完成した可愛い髪型だけを真似しようとしてるから。<br>必要なのは器用さじゃなくて、<strong>順番どおりに知ること</strong>なんです。</p>
       </div>
-      <div class="video"><video src="media/riyuu.mp4" poster="media/riyuu-poster.jpg" controls playsinline preload="none"></video></div>
-      <p class="vcap">▶ アレンジが上手くいかない理由（1分42秒）</p>
       <p style="margin-top:16px">その基本になるのが、この<strong style="color:var(--pink-d)">6つのテク</strong>。</p>
       <div class="six">
         <div><b>1</b>結ぶ</div><div><b>2</b>ねじる</div><div><b>3</b>くるりんぱ</div>
@@ -178,9 +190,8 @@ footer a{color:var(--sub)}
   <section id="s2" class="fade" data-step="2">
     <span class="label">STEP 2</span>
     <h2>編み込みの基本<br>ゆっくり解説動画🎁</h2>
-    <p class="first">▶ まずは、この動画を見てみてね</p>
     <p>ポイントは3つだけ。<br>動画を見ながら、できたら○をタップしてね。</p>
-    <div class="video yt"><iframe id="yt" src="https://www.youtube-nocookie.com/embed/X80UM8RP1cQ?rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fkenprmt-byte.github.io" title="4日目 編み込みマスター講座 編み込み基礎編" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <div class="video yt"><iframe src="https://www.youtube-nocookie.com/embed/X80UM8RP1cQ?rel=0&playsinline=1" title="4日目 編み込みマスター講座 編み込み基礎編" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
     <p class="vcap">▶ 4日目 編み込みマスター講座「編み込み基礎編」（3分）<br>止めながら、巻き戻しながら、いっしょにやってみてね</p>
     <ul class="points" id="points">
       <li><button class="check" type="button" aria-label="できた">✓</button><div><b>① 三つ編みに、髪を足していくだけ</b><small>まず三つに分けて、1回三つ編み。そこから毛束を真ん中に持ってくるときに、少しずつ髪を足します。</small></div></li>
@@ -194,16 +205,8 @@ footer a{color:var(--sub)}
         <p>まだの人も大丈夫。<br>やり方を分解して、<strong>一つずつ練習すれば必ずできるようになります</strong>。止めながら、何回でも見てね。</p>
       </div>
     </div>
-    <div class="vlock" id="vlock">
-      <span>🔒</span>
-      <b>動画を見終わると、続きが開くよ</b>
-      <small>受講生ママたちの声と、<br>この動画の「続き」のお話があります</small>
-      <div class="meter"><i id="meter"></i></div>
-      <button type="button" id="skip">動画はあとで見る人は、こちらから開けます</button>
-    </div>
   </section>
 
-  <div id="after" hidden>
   <section class="fade">
     <span class="label">VOICE</span>
     <h2>「私には無理」と思ってたママたちから、届いたDM</h2>
@@ -280,9 +283,9 @@ footer a{color:var(--sub)}
     if(n>=1) ans2.classList.add('open');
   }); });
 
-  // 動画を8割見たら続きを開く
-  var after=document.getElementById('after'), vlock=document.getElementById('vlock'), meter=document.getElementById('meter');
-  var KEY='maco_amikomi_unlocked';
+  // 最初の動画を8割見たら続きを開く
+  var after=document.getElementById('after'), vlock=document.getElementById('vlock'), meter=document.getElementById('meter'), rv=document.getElementById('riyuu');
+  var KEY='maco_amikomi_open_v2';
   function unlock(anim){
     if(!after.hidden) return;
     after.hidden=false; vlock.hidden=true;
@@ -291,24 +294,15 @@ footer a{color:var(--sub)}
     onScroll();
   }
   var done=false; try{ done=localStorage.getItem(KEY)==='1'; }catch(e){}
-  if(done || location.hash==='#s3'){ unlock(false); }
+  if(done || /^#s[123]$/.test(location.hash)){ unlock(false); if(location.hash){ setTimeout(function(){ var t=document.querySelector(location.hash); if(t) t.scrollIntoView(); },50); } }
   document.getElementById('skip').addEventListener('click',function(){ unlock(true); });
-  document.querySelectorAll('a[href="#s3"]').forEach(function(a){ a.addEventListener('click',function(ev){ if(after.hidden){ ev.preventDefault(); vlock.scrollIntoView({behavior:'smooth',block:'center'}); } }); });
-  if(after.hidden){
-    var tag=document.createElement('script'); tag.src='https://www.youtube.com/iframe_api'; document.head.appendChild(tag);
-    var timer=null;
-    window.onYouTubeIframeAPIReady=function(){
-      var pl=new YT.Player('yt',{events:{onStateChange:function(e){
-        if(e.data===YT.PlayerState.ENDED){ meter.style.width='100%'; unlock(true); return; }
-        if(e.data===YT.PlayerState.PLAYING && !timer){
-          timer=setInterval(function(){
-            var d=pl.getDuration(), t=pl.getCurrentTime();
-            if(d>0){ var r=t/d; meter.style.width=Math.min(100,r/0.8*100)+'%'; if(r>=0.8){ clearInterval(timer); unlock(true); } }
-          },1000);
-        }
-      }}});
-    };
-  }
+  document.querySelectorAll('a[href^="#s"]').forEach(function(a){ a.addEventListener('click',function(ev){ if(after.hidden){ ev.preventDefault(); vlock.scrollIntoView({behavior:'smooth',block:'center'}); } }); });
+  rv.addEventListener('timeupdate',function(){
+    if(!rv.duration) return; var r=rv.currentTime/rv.duration;
+    meter.style.width=Math.min(100,r/0.8*100)+'%';
+    if(r>=0.8) unlock(true);
+  });
+  rv.addEventListener('ended',function(){ unlock(true); });
 
   var now=new Date(), cd=document.getElementById('cd');
   var start=new Date('2026-12-03T00:00:00+09:00'), end=new Date('2026-12-04T00:00:00+09:00');
