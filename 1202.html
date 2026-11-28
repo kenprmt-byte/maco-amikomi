@@ -138,6 +138,21 @@ footer a{color:var(--sub)}
       <details><summary>忙しくて、すぐに見られないかも…</summary><p>今回は視聴期限なしなので、時間ができたときに、自分のペースで見られます。</p></details>
     </div>
   </section>
+  <section>
+    <span class="label">VOICE</span>
+    <h2 style="margin-top:8px">「私には無理」と思ってたママたちから、届いたDM</h2>
+    <p>まずは、受講生さんの「ビフォー→アフター」。<br>横にスワイプして見てね👉</p>
+    <div class="slider" id="slider">
+      <img src="media/voice1.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（編み込みだけは全然できなくて…）" loading="lazy">
+      <img src="media/voice2.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（三つ編みが正しくできるように）" loading="lazy">
+      <img src="media/voice3.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（大の苦手だった編み込み）" loading="lazy">
+      <img src="media/voice4.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（いつも同じアレンジばかりだったママ）" loading="lazy">
+    </div>
+    <p class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></p>
+    <p style="margin-top:14px">講座を受けてくれた方から、実際に届いたDMです。</p>
+    <figure class="dm"><img src="media/dm-0822.jpg" width="720" height="1280" alt="受講生さんから届いたDM（講座購入させていただきました・結果大満足です）" loading="lazy"><figcaption>「口コミとして使ってください」と言ってもらえたDMです</figcaption></figure>
+    <p class="note" style="margin-top:10px;text-align:right">※個人の感想です</p>
+  </section>
   <div class="nextday">明日 <b>12/6（日）</b>、LINEに登録してくれている人へ、講座のことをひと足先にご案内します</div>
   <p class="share-note">送ってくれた感想は、ストーリーズで<br>紹介させてもらうことがあります☺️</p>
   <a class="btn line" href="https://line.me/R/ti/p/@591mhsjo">LINEで感想・質問を送る</a>
@@ -148,5 +163,9 @@ footer a{color:var(--sub)}
     ※動画・ページの転載はご遠慮ください
   </footer>
 </div>
+<script>
+(function(){ var sl=document.getElementById('slider'), dots=document.querySelectorAll('#dots span'); if(!sl) return;
+  sl.addEventListener('scroll',function(){ var w=sl.firstElementChild.getBoundingClientRect().width+10; var k=Math.round(sl.scrollLeft/w); dots.forEach(function(d,i){ d.classList.toggle('on',i===k); }); },{passive:true}); })();
+</script>
 </body>
 </html>

@@ -95,6 +95,11 @@ p+p{margin-top:12px}
 .gate .body{display:none}
 .gate.open .body{display:block}
 .gate.open .lock{display:none}
+.bonus1{margin-top:14px;background:#fff;border:2px solid var(--pink-l);border-radius:16px;padding:12px 14px}
+.bonus1 b{display:block;font-size:16px;color:var(--pink-d)}
+.bonus1 small{display:block;color:var(--sub);font-size:13px;line-height:1.7;margin-top:4px}
+.bonus1 video{display:block;width:100%;height:auto;border-radius:10px;margin:10px 0 2px;border:1px solid var(--pink-l)}
+.bonus1 small.cap{font-size:12px;margin-top:0}
 .bridge{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff;border:2px solid var(--pink-l);font-size:15px;line-height:1.9}
 .bridge p+p{margin-top:6px}
 .note-free{margin-top:18px;padding:12px 14px;border-radius:14px;background:var(--pink-l);font-size:14px;line-height:1.8}
@@ -209,21 +214,6 @@ footer a{color:var(--sub)}
     </div>
   </section>
 
-  <section class="fade">
-    <span class="label">VOICE</span>
-    <h2>「私には無理」と思ってたママたちから、届いたDM</h2>
-    <p>まずは、受講生さんの「ビフォー→アフター」。<br>横にスワイプして見てね👉</p>
-    <div class="slider" id="slider">
-      <img src="media/voice1.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（編み込みだけは全然できなくて…）" loading="lazy">
-      <img src="media/voice2.jpg" width="720" height="1280" alt="受講生さんのビフォーアフターと感想（三つ編みが正しくできるように）" loading="lazy">
-      <img src="media/voice3.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（大の苦手だった編み込み）" loading="lazy">
-      <img src="media/voice4.jpg" width="720" height="1280" alt="前回受講してくれたフォロワーさんの変化（いつも同じアレンジばかりだったママ）" loading="lazy">
-    </div>
-    <p class="dots" id="dots"><span class="on"></span><span></span><span></span><span></span></p>
-    <p style="margin-top:14px">講座を受けてくれた方から、実際に届いたDMです。</p>
-    <figure class="dm"><img src="media/dm-0822.jpg" width="720" height="1280" alt="受講生さんから届いたDM（講座購入させていただきました・結果大満足です）" loading="lazy"><figcaption>「口コミとして使ってください」と言ってもらえたDMです</figcaption></figure>
-    <p class="note" style="margin-top:10px;text-align:right">※個人の感想です</p>
-  </section>
 
   <section id="s3" class="fade next" data-step="3">
     <span class="label">STEP 3</span>
@@ -233,6 +223,12 @@ footer a{color:var(--sub)}
     <div class="six">
       <div><b>1日目</b>基礎</div><div><b>2日目</b>ねじる・くるりんぱ</div><div><b>3日目</b>三つ編み</div>
       <div class="hl"><b>4日目</b>編み込み</div><div><b>5〜6日目</b>組み合わせ</div><div><b>7〜8日目</b>髪質・応用</div>
+    </div>
+    <div class="bonus1">
+      <b>🎁 100種類のヘアアレンジ解説もついてくるよ</b>
+      <small>講座には、美容師監修の動画集「ヘアアレンジの教科書」もついてきます。登園ヘア・イベントヘアなど場面ごとに、ゆっくり見ながらマネできます。</small>
+      <video src="media/kyokasho-scroll.mp4" poster="media/kyokasho-scroll.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <small class="cap">▲ 実際の一覧画面</small>
     </div>
     <div class="bridge">
       <p>編み込み、むずかしく感じても大丈夫☺️</p>
@@ -275,8 +271,6 @@ footer a{color:var(--sub)}
     c.addEventListener('click',function(){ c.classList.toggle('on'); if(document.querySelector('#chips .chip.on')) ans1.classList.add('open'); });
   });
 
-  var sl=document.getElementById('slider'), dots=document.querySelectorAll('#dots span');
-  sl.addEventListener('scroll',function(){ var w=sl.firstElementChild.getBoundingClientRect().width+10; var k=Math.round(sl.scrollLeft/w); dots.forEach(function(d,i){ d.classList.toggle('on',i===k); }); },{passive:true});
 
   var checks=document.querySelectorAll('#points .check'), count=document.getElementById('count'), ans2=document.getElementById('ans2');
   checks.forEach(function(b){ b.addEventListener('click',function(){
