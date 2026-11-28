@@ -313,5 +313,24 @@ footer a{color:var(--sub)}
   else { cd.innerHTML='<small class="big">先行案内はLINEで届いてるよ。LINEをチェックしてね</small>'; }
 })();
 </script>
+<script>
+/* 計測：人数だけ（個人は特定しない）。記録先＝黒須のGoogleスプレッドシート */
+(function(){
+  var EP='https://script.google.com/macros/s/AKfycby9F5TVdmosHPyif1xeU-E-xEDYpGQ_E04AJ4DT57nfml1d-TnPZ6-7f6ZqMl69Gor0/exec';
+  var vid; try{ vid=localStorage.getItem('maco_vid'); if(!vid){ vid=Math.random().toString(36).slice(2,10); localStorage.setItem('maco_vid',vid);} }catch(e){ vid='na'; }
+  var src=''; try{ src=new URLSearchParams(location.search).get('src')||(document.referrer?new URL(document.referrer).hostname:'direct'); }catch(e){}
+  var sent={};
+  function hit(ev,once){ if(once){ if(sent[ev]) return; sent[ev]=1; }
+    try{ var u=EP+'?ev='+encodeURIComponent(ev)+'&pg=index&v='+vid+'&src='+encodeURIComponent(src);
+      if(navigator.sendBeacon){ navigator.sendBeacon(u); } else { fetch(u,{mode:'no-cors',keepalive:true}); } }catch(e){} }
+  window.__mHit=hit;
+  hit('open',true);
+  var rv=document.getElementById('riyuu');
+  if(rv){ rv.addEventListener('play',function(){hit('riyuu_play',true)}); rv.addEventListener('timeupdate',function(){ if(rv.duration && rv.currentTime>=rv.duration-1.6) hit('riyuu_end',true); }); }
+  var sk=document.getElementById('skip'); if(sk) sk.addEventListener('click',function(){hit('skip',true)});
+  window.addEventListener('blur',function(){ setTimeout(function(){ var a=document.activeElement; if(a && a.tagName==='IFRAME') hit('gift_play',true); },50); });
+  document.querySelectorAll('a.btn.line').forEach(function(a){ a.addEventListener('click',function(){hit('line_click')}); });
+})();
+</script>
 </body>
 </html>
